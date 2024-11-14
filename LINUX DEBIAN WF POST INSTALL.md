@@ -33,9 +33,7 @@ If the sudoers file is missing or removed, reinstall the package with this comma
 	sudo apt install sudo
 
 ## 2. ENABLE SOFTWARE AND UPDATE.
-- [ ] Learn Markdown
-- [ ] Learn Frontend Development
-- [ ] Learn Full Stack Development
+
 - [ ] Find the [SOFTWARE and UPDATE] app.
 - [ ] Enable all check-boxes in the [Debian Software] panel.
 - [ ] Choose your preferred server or you can leave it by default. Preferably the Main Server.

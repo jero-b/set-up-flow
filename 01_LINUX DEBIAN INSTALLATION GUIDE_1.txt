@@ -1,0 +1,237 @@
+LINUX WORKFLOW GUIDE
+#notes on how and what to install and do when setting up a Linux laptop or PC as fresh install.
+
+CHOOSING A DISTRO (Distribution)
+When choosing a distro there are five criteria that needs to be met.
+1. WIFI or LAN must work, preferably wifi, bonus if Bluetooth or BT tether function also works out of the box.
+2. KEYBOARD works automatically before, during and after distro installation.
+3. PORTS AND CONNECTIONS are functioning before, during and after installation. USB-A and USB-C must be working. If headphone combo jack, SD card reader or CD-rom reader also work that is a plus.
+4. DRIVER AND MONITOR support must be supported. Most intel and AMD processors support integrated graphics on linux but make sure it works also with discreet and dedicated GPU like NVIDAs and AMDs.
+5. MOUSEPAD must be working and functional, modern laptop have gesture support and multi point touch, also check if it is supported by your distro and laptop.
+
+When selecting a Distribution only 3 distro comes to mind. Those are:
+1. DEBIAN LINUX
+2. ARCH LINUX
+4. FEDORA
+Any of those 3 will work just fine. If wanting to try to install it on older and lower spec devices, these 3 are the contenders:
+1. ANTIX LINUX
+2. MINI OS - a linux distribution based on debian
+3. PUPPY LINUX
+Other linux distros are still in waiting list mode. Other distros and OS's that would be interesting temporarily are FREE BSD and VOID LINUX.
+
+DEBIAN Installation Guide:
+1. Choosing a boot installation IMAGE or ISO. Always select the standard option. In Debian they label it as 'cd_1 or cd1' or for a more safer option but consume more data and storage space the one label with 'dvd1 or dvd_1'. There are also other flavor and installation option to choose from. 
+2. Always try the live version first.
+3. Always disable secure boot in your device BIOS and enable legacy boot, especially if your device comes with a pre-installed Windows in it. Disabling secure boot enables you to boot a USB bootable device. Sometimes linux wont install grub bootloader on hardisk because UEFI, EFI, UFI is enable in boot option, you can disable it or change it to legacy support.
+4. INSTALLATION WALK-TROUGH REFERENCE .Use the grub installer when installing. Note that this is a general reference guide for me, created by me. This is not a literal step by step installation guide. Use this a reference only.
+a. language/region - english US
+b. keyboard layout - english US, english PH
+c. network configuration (you can just skip or disable connecting to network for now)
+d. desktop environment - GNOME, CINNAMON, KDE and XFCE/LXQT. GNOME AND CINNAMON will always be the first choice for laptop. In the installation you might ask which one to install and use. But if you are using a flavored version with DE in it then you can skip this.
+e. disk partitioning - on some cases going with the default partitioning works. On some cases manually partitioning might be the better choice. Remember: in linux you need two important partition, the "file partition" this is where you install the OS and bootloader, and then the "swap partition" also known as linux swap image.
+	- file partition: "/" have the ext4 file drive system. The most important
+	partition. Mostly the largest volume in the partitions.
+	- swap partition: a swap image partition, the default size is 1G but can be
+	increase. The rule of thumb is your swap must be the size or more of your
+	RAM. e.g. 4G of RAM = 4G of swap or more.
+	- EFI partition: on some cases linux installer have the default EFI
+	partition for PC or laptop that support UEFI boot. Some installer label it 
+	as FAT32 boot partition. (you can delete this partition if your device
+	doesn't support UEFI. On the other hand even if your device support it
+	you can just ignore it by disabling secure boot and enabling legacy boot.)
+	There are some cases that by allowing EFI partition your bootloader won't
+	install and might end up a broken installation.
+
+DISPLAY MANAGER
+Display manager comes by default in most flavor of every distribution. You may skip this if you have an already install DE distro.
+Install a display manager: A display manager is responsible for handling login and graphical sessions.
+LightDM 
+	sudo apt-get install lightdm
+	or:
+	sudo apt install lightdm
+GDM3
+	sudo apt-get install gdm3
+	or:
+	sudo apt install gdm3
+KDM - if using KDE
+	sudo apt-get install sddm
+	or:
+	sudo apt install sddm 
+To remove the Display manager: ignore the []
+	sudo apt-get remove [insert display manager name]
+	or:
+	sudo apt remove [insert display manager name]
+However, if you have multiple display managers installed, you can choose between them using: Ignore the []
+	sudo dpkg-reconfigure [insert display manager name]
+You can use any display manager's name in place of [insert display manager name] in the above command, and it will allow you to choose between them. You must reboot for the change to take affect.
+To check which display manager is currently being used, run this command:
+	cat /etc/X11/default-display-manager
+	or:
+	systemctl status display-manager
+Stop and disable Display Manager:
+	systemctl stop [DM name].service
+	systemctl disable [DM name].service
+
+INSTALL GNOME
+There are 3 versions of GNOME, the full desktop, the minimal and the vanilla.
+Install full gnome: includes games and other apps like libre office. 2gig
+	sudo apt install gnome-desktop
+	or:
+	sudo apt install task-gnome-desktop
+	or:
+	sudo apt install gnome/stable
+Install minimal gnome: without the extra apps. 800mb
+	sudo apt install gnome-desktop-minimal
+Install vanilla gnome: the most strip down version.
+	sudo apt install vanilla-gnome-desktop
+REMOVING GNOME:
+	sudo apt-get purge gnome*
+	sudo apt-get autoremove
+	
+INSTALL KDE
+KDE uses SDDM display manager, a configuration window module may pop to select SDDM. There are 3 variations of KDE. The full, the standard and the minimal.
+Full-Fledged KDE Experience:
+	sudo apt install kde-full
+Balanced KDE Standard:
+	sudo apt install kde-standard
+Minimalist KDE Plasma Desktop:
+	sudo apt install kde-plasma-desktop
+REMOVING KDE:
+	sudo apt autoremove '^kde' '^plasma' --purge
+
+INSTALL CINNAMON
+cinnamon is like an old gnome with some kde. LightDM is a good choice for cinnamon.
+install the cinnamon desktop environment:
+	sudo apt install task-cinnamon-desktop
+REMOVE CINNAMON:
+	sudo apt autoremove '^cinnamon' task-cinnamon-desktop --purge
+	
+INSTALL XFCE
+LightDM is a good choice for xfce.
+Install XFCE
+	sudo apt install task-xfce-desktop
+REMOVE XFCE
+	sudo apt autoremove '^xfce' task-xfce-desktop --purge
+Should you come across a scenario where a blue screen appears solely during the installation process, you might need to execute the subsequent command:
+	sudo apt install xorgxrdp
+
+COMMON PROBLEMS IN DISPLAY MANAGER WHEN SWITCHING OR INSTALLING DE's.
+1. Display Manager Not Starting
+If LightDM fails to start, check the system logs and ensure that the service is enabled:
+	sudo systemctl status lightdm
+	sudo systemctl enable lightdm
+command above also works with other DM, just change lightdm to the name of prefered DM.
+
+2. Desktop Environment Not Loading
+If the desktop environment doesn’t load after rebooting, check the display manager configuration file:
+	sudo nano /etc/lightdm/lightdm.conf
+Ensure that the following line is present and uncommented:
+	greeter-session=example-gtk-gnome
+
+3. Missing Graphical Packages
+If you encounter missing graphical packages, install the required dependencies:
+	sudo apt install -f
+
+APPS AND PROGRAMS TO INSTALL
+#note that some applications may have multiple installation methods. You may need internet connection for this.
+1.TERMINAL
+a. TREE - shows a directory tree in terminal.
+	sudo apt install tree
+b. CATIMG - show pixilated images in terminal.
+	sudo apt install catimg
+c. JP2A - show/convert images as ascii art.
+	sudo apt install jp2a
+d. NEOFETCH - show distro logo and system informations.
+	sudo apt install neofetch
+e. FIGLET - make input text as ascii artword.
+	sudo apt install figlet
+
+2. UTILITY ADMINISTRATION
+#note after installing a and b (GNOME TWEAKS AND EXTENSION MANAGER) you can proceed to DESKTOP TWEAKS AND EXTENSIONS below and comeback later or just continue installing the rest of the applications. Install a and b ONLY IF YOU USE GNOME. The rest are OK.
+a. GNOME TWEAKS - in most instances this one comes pre-installed in most GNOME DE installed. If none, install it using software center or terminal.
+	sudo apt install gnome-tweaks
+b. SHELL EXTENSIONS - gnome shell extension, the one with a green jigsaw puzzle icon or logo.
+	sudo apt install gnome-shell-extensions
+after that install the manager.
+   b.b EXTENSION MANAGER - manages extentions in GNOME.
+	sudo apt install gnome-shell-extension-manager
+	or you can try flatpak:
+	flatpak install flathub com.mattjakeman.ExtensionManager
+c. GDEBI PACKAGE INSTALLER -  used to install binary packages in debian base distro.
+	sudo apt install gdebi
+d. VIRTUAL BOX
+	https://www.virtualbox.org/wiki/Downloads
+e. VENTOY
+	https://www.ventoy.net/en/download.html
+f. VERACRYPT
+	https://www.veracrypt.fr/en/Downloads.html
+g. SYNAPTIC - a robust package manager.
+	sudo apt install synaptic
+
+3. GRAPHICS AND VISUAL
+a. GIMP - Image manipulation software.
+	sudo apt install gimp
+	to remove GIMP:
+	sudo apt --purge remove gimp gimp-plugin-registry
+	sudo apt --purge autoremove
+	or: installing using flatpak:
+	flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
+	to remove GIMP:
+	flatpak uninstall org.gimp.GIMP//stable
+b. INKSCAPE - Vector creation and editing software.
+	sudo apt-get install inkscape
+	or:
+	flatpak install flathub org.inkscape.Inkscape
+	or: download an appimage
+	https://inkscape.org/release/1.4/gnulinux/
+	
+c. PINTA - MS Paint on drugs. You can also install pinta using the software center.
+d. CONVERSEEN - Image Converter.
+	flatpak install flathub net.fasterland.converseen
+	run converseen:
+	flatpak run net.fasterland.converseen
+e. GNOME IMAGEVIEWER - also known as EYE OF GNOME image viewer mostly installed by default.
+	sudo apt install eog
+
+4. AUDIO
+a. AUDACITY - Audio editor.
+	sudo apt install audacity
+b. DEEMIX - Music downloader for deezer.
+	# this app is an .appimage file
+c. TAGSCANNER/KID3
+	sudo apt install kid3
+
+5. VIDEO
+a. MPV/VLC PLAYER - Video player.
+	use synaptic for MPV
+	for VLC:
+	sudo apt install vlc
+b. HANDBRAKE - Video encoder and converter.
+	flatpak install flathub fr.handbrake.ghb
+
+6. DOCUMENTS
+a. LIBRE OFFICE - Office document editor and creator.
+	sudo apt install libreoffice
+b. EVINCE -  PDF viewer.
+ 
+7. INTERNET
+a. LIBREWOLF - Default browser. 
+b. OPERA - Back-up browser. Used for geo location in built in VPN and Save page as PDF option.
+c. qBITTORENT - for torrent downloads.
+
+DESKTOP TWEAKS AND EXTENSIONS FOR GNOME
+1. GNOME TWEAKS ENABLES
+a. Allow OVER-AMPLIFICATION - for louder sounding speaker.
+b. Enable Suspend when laptop lid is closed.
+c. Mouse Click Emulation - FINGERS, two fingers on touchpad for right click and three finger for middle click.
+d. TOP BAR - enable weekday and date, show week number on calendar.
+e. TITLE BAR ACTION - double click-maximize, middle click minimize, secondary right click-menu. Enable Minimize button within the right placement.
+f. WINDOW - disable modal dialogs. Enable center new windows. Enable click to focus.
+
+2. LIST OF EXTENSIONS TO BE USED
+a. DASH TO DOCK - @micxgx, accessible dock, enable the intelligent auto-hide.
+b. DESKTOP ICON - @rastersoft DING.
+c. BLUR MY SHELL - @aunetx blur the background shell. Purely aesthetic purposes.(Optional) can be ignored.
+d. CLIPBOARD HISTORY - @alexsaveau history of path copied text and file path.
+
+

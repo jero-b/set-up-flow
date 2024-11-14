@@ -1,0 +1,101 @@
+APPS AND PROGRAMS TO INSTALL
+#note that some applications may have multiple installation methods. You may need internet connection for this.
+1.TERMINAL
+a. TREE - shows a directory tree in terminal.
+	sudo apt install tree
+b. CATIMG - show pixilated images in terminal.
+	sudo apt install catimg
+c. JP2A - show/convert images as ascii art.
+	sudo apt install jp2a
+d. NEOFETCH - show distro logo and system informations.
+	sudo apt install neofetch
+e. FIGLET - make input text as ascii artword.
+	sudo apt install figlet
+
+2. UTILITY ADMINISTRATION
+#note after installing a and b (GNOME TWEAKS AND EXTENSION MANAGER) you can proceed to DESKTOP TWEAKS AND EXTENSIONS below and comeback later or just continue installing the rest of the applications. Install a and b ONLY IF YOU USE GNOME. The rest are OK.
+a. GNOME TWEAKS - in most instances this one comes pre-installed in most GNOME DE installed. If none, install it using software center or terminal.
+	sudo apt install gnome-tweaks
+b. SHELL EXTENSIONS - gnome shell extension, the one with a green jigsaw puzzle icon or logo.
+	sudo apt install gnome-shell-extensions
+after that install the manager.
+   b.b EXTENSION MANAGER - manages extentions in GNOME.
+	sudo apt install gnome-shell-extension-manager
+	or you can try flatpak:
+	flatpak install flathub com.mattjakeman.ExtensionManager
+c. GDEBI PACKAGE INSTALLER -  used to install binary packages in debian base distro.
+	sudo apt install gdebi
+d. VIRTUAL BOX
+	https://www.virtualbox.org/wiki/Downloads
+e. VENTOY
+	https://www.ventoy.net/en/download.html
+f. VERACRYPT
+	https://www.veracrypt.fr/en/Downloads.html
+g. SYNAPTIC - a robust package manager.
+	sudo apt install synaptic
+
+3. GRAPHICS AND VISUAL
+a. GIMP - Image manipulation software.
+	sudo apt install gimp
+	to remove GIMP:
+	sudo apt --purge remove gimp gimp-plugin-registry
+	sudo apt --purge autoremove
+	or: installing using flatpak:
+	flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
+	to remove GIMP:
+	flatpak uninstall org.gimp.GIMP//stable
+b. INKSCAPE - Vector creation and editing software.
+	sudo apt-get install inkscape
+	or:
+	flatpak install flathub org.inkscape.Inkscape
+	or: download an appimage
+	https://inkscape.org/release/1.4/gnulinux/
+	
+c. PINTA - MS Paint on drugs. You can also install pinta using the software center.
+d. CONVERSEEN - Image Converter.
+	flatpak install flathub net.fasterland.converseen
+	run converseen:
+	flatpak run net.fasterland.converseen
+e. GNOME IMAGEVIEWER - also known as EYE OF GNOME image viewer mostly installed by default.
+	sudo apt install eog
+
+4. AUDIO
+a. AUDACITY - Audio editor.
+	sudo apt install audacity
+b. DEEMIX - Music downloader for deezer.
+	# this app is an .appimage file
+c. TAGSCANNER/KID3
+	sudo apt install kid3
+
+5. VIDEO
+a. MPV/VLC PLAYER - Video player.
+	use synaptic for MPV
+	for VLC:
+	sudo apt install vlc
+b. HANDBRAKE - Video encoder and converter.
+	flatpak install flathub fr.handbrake.ghb
+
+6. DOCUMENTS
+a. LIBRE OFFICE - Office document editor and creator.
+	sudo apt install libreoffice
+b. EVINCE -  PDF viewer.
+ 
+7. INTERNET
+a. LIBREWOLF - Default browser. 
+b. OPERA - Back-up browser. Used for geo location in built in VPN and Save page as PDF option.
+c. qBITTORENT - for torrent downloads.
+
+DESKTOP TWEAKS AND EXTENSIONS FOR GNOME
+1. GNOME TWEAKS ENABLES
+a. Allow OVER-AMPLIFICATION - for louder sounding speaker.
+b. Enable Suspend when laptop lid is closed.
+c. Mouse Click Emulation - FINGERS, two fingers on touchpad for right click and three finger for middle click.
+d. TOP BAR - enable weekday and date, show week number on calendar.
+e. TITLE BAR ACTION - double click-maximize, middle click minimize, secondary right click-menu. Enable Minimize button within the right placement.
+f. WINDOW - disable modal dialogs. Enable center new windows. Enable click to focus.
+
+2. LIST OF EXTENSIONS TO BE USED
+a. DASH TO DOCK - @micxgx, accessible dock, enable the intelligent auto-hide.
+b. DESKTOP ICON - @rastersoft DING.
+c. BLUR MY SHELL - @aunetx blur the background shell. Purely aesthetic purposes.(Optional) can be ignored.
+d. CLIPBOARD HISTORY - @alexsaveau history of path copied text and file path.

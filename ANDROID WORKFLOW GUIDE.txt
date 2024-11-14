@@ -1,0 +1,103 @@
+ANDROID WORKFLOW GUIDE
+#notes on how and what to install and do when setting up an ANDROID phone or TABLET as fresh install or purchase.
+
+HARDWARE OPTIONS
+When choosing an android phone there are six criteria that needs to be met.
+1. It must support 5G and 4G cellular connection. For tablet at least wifi a/b/g/n/ac/x or at least wifi 6 or newer.
+2. Minimum of 1080p screen resolution 1.5k resolution screen are perfect for mobile phones and for tablet around 1440p or 2k screen resolution.
+3. Sizes for phones must be around 6.0 inch - 6.8 inch screen. Above that are too large for a phone within my hand. For tablet must be around 10 inch - 13.5 inch. 
+4. Storage must at least be 128g or above. RAM must be at least 4g or above the bigger ram and storage the better.
+5. Must have SD card slot. 
+6. Fast camera capture with decent images. For tablet it must support display out or pen.
+
+CHOOSING A FLAVOR (Android Version)
+1. Any newest android version will be acceptable. But if not available at least two generation behind will suffice. For example the latest is android 15, the least minimum would be android 13. Android 14 will be good, android 12 and below is a big NO. 
+
+BRAND SELECTION
+1. This guide has no brand loyalty. Buy whatever suits the above qualifications. International and local brands as long as they are good with the above requirements they're considered.
+2. Always do watch a comprehensive video review of the phone. Not just from one source but multiple sources like: multiple youtube videos both mainstream and independent youtuber., website blogs and forums.
+3. Don't be to swift and rush to buy, do your research well.
+
+FIRST BOOT
+1. Immediately set-up a password or any security feature that you prefer. Neglecting this might results in unfavorable circumstances.
+2. Then try the connections and ports, make sure you can connect to a wifi network, you can connect to mobile data, the speakers are working and camera is responsive. SD card should also be working. Make sure the top 6 criteria are met.
+3. Try installing some random apps, open it, play with it a little, then reboot the phone. or tablet.
+4. Redo step number 2.
+5. If step number 4 is OK. Then proceed setting up your accounts and data.
+6. If you use google backup then use it. It's convenient but I don't recommend it.
+7. After setting up the above steps. Try installing your needed apps and games, change wallpaper, and customize the phone base on your preference. Proceed to APPS AND GAMES below. For what to install.
+8. Disable or opt out to any user experience and targeted advertising bullshit the manufacturer or any app you have.
+9. Adjust settings based on your liking. Adjust control panel, rearrange launcher and homescreen.
+10. The default launcher would suffice. If it is really that horrible then install a different one then adjust and customize to your liking.
+11. Uninstall or disable unwanted bloatware.
+12. After step 9, 10 and 11 do a final reboot.
+
+APPS AND GAMES
+#note that some applications may have multiple installation methods. You may need internet connection for this.
+
+1. UTILITY
+# contains applications that are utilize for the improved or faster experience on the phone or tablet.
+a. TOOLBOX -  an all in one tool app.
+b. WEBSHARING/PLAINAPP - connect device to PC or laptop over lan network.
+c. LENS - Point and search.
+d. FILE MANAGER - If the default file manager have ftp connection then it will suffice if none then install one. Recommended is xiaomi file manager.
+e. NOTES - the default note taking app is a must, in addition to that Google KEEP should also be installed.
+f. MICRO G - a psuedo GMS provider, used in youtube vanced.
+g. Z-ARCHIVER - Archives files.
+h. SIMPLE KEYBAORD - do not use google keyboard.
+i. REVANCED MANAGER - install youtube revanced.
+
+2. GRAPHICS AND VISUAL
+# applications that deal with consumption media especially video and images.
+a. PERFECT VIEWER - view manga, comics and zip files.
+b. LIGHTROOM - enhance and edit images.
+c. SIMPLE GALLERY - manage and edit images, if the default gallery is better than this then no need to install this app.
+
+3. AUDIO
+# applications that play, edit or handle audio.
+a. OTO MUSIC - Music player. If the default music player is better than this, then no need to install this.
+b. SOUND OR AUDIO RECORDER - built in default recorder will suffice.
+
+4. VIDEO
+# play and handle videos.
+a. MX PLAYER - a video player.
+b. YOUTUBE REVANCED - no ads youtube.
+c. havent decided with an android video editor yet
+
+5. DOCUMENTS
+# Edit or create documents
+a. GOOGLE DOCS - SHEETS, DOCS, PRESENTATION.
+b. WPS PDF VIEWER - View pdfs.
+
+7. INTERNET
+a. OPERA BROWSER - internet browser.
+b. OPERA MINI - for browsing using mobile data.
+c. TUTA MAIL - used for email.
+d. GMAIL - used for email.
+e. PROTON MAIL - used for email, shopping apps email.
+f. F-DROID - open source android application store.
+g. INSTAGRAM - a social media.
+
+8. STUDY AND READS
+a. BIBLE KJV - read bible.
+b. MOON+ READER - read ebooks.
+c. DUOLINGO - learn and study languages.
+
+9. OTHERS
+a. GOOGLE CAMERA - alternative camera app.
+b. ANDROID ASSISTANT - alternative to toolbox.
+c. GCASH - online wallet.
+d. PAYPAL - online wallet
+e. GLOBE ONE - networks app for promo and mobile data tracking.
+f. LAZADA AND SHOPPEE - online shopping app.
+
+FOLDERS AND APP DIVISION
+1. RED FOLDER
+a. Red apps that categorized as personal apps. Mostly used for personal transactions like email and messaging app. Mostly include locks and encryption. Privacy is a big concern in red folder category.
+b.Notepad, BibleKJV, TutaMail, PerfectViewer, Moon+Reader, Youtube, Opera Mini.
+2. GREEN FOLDER
+a. Green apps are applications used in public or used to access public data, or you don't mind giving the public or big corporation that data about you. It's data of what you want them to know about you.
+b. Anything related to google, Gcash, Paypal, Gallery, Duolingo, Globeone.
+
+3. NEUTRAL APPS
+a. Apps you don't really care where they belong and how you used it.

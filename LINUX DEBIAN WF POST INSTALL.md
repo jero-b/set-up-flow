@@ -55,8 +55,9 @@ In terminal for NVIDIA:
 	
 	sudo apt install nvidia-driver firmware-misc-nonfree
 
-In terminal for AMD:
-	
+In terminal for AMD: log in as root/su
+
+ 	apt-get install firmware-amd-graphics libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all
 	
 ## 5. FIREWALL. (Recommended if you connect always in public networks)
 In terminal:

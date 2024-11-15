@@ -51,14 +51,37 @@ To check:
 	sudo dpkg-reconfigure unattended-upgrades
 
 ## 4. INSTALL GRAPHIC DRIVERS. (If you don't have NVIDIA GPU or AMD GPU skip this.) 
-In terminal for NVIDIA:
+### NVIDIA
+In terminal for NVIDIA: 
 	
 	sudo apt install nvidia-driver firmware-misc-nonfree
 
+For more info refer to this [LINK](https://wiki.debian.org/NvidiaGraphicsDrivers)
+
+### AMD
 In terminal for AMD: log in as root/su
 
  	apt-get install firmware-amd-graphics libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all
 	
+Preventing screen tearing
+
+Screen tearing can appear when using the amdgpu driver/kernel module with an AMD Renoir and others.
+
+Enable TearFree on an external monitor (until reboot) with:
+
+	xrandr --verbose|grep TearFree
+	xrandr --output HDMI-A-0 --set TearFree on          
+
+Make changes persistent by creating this file and then restarting X:
+	
+ 	echo > /etc/X11/xorg.conf.d/20-amdgpu.conf <<EOF
+	Section "Device"
+   		Identifier  "AMD Graphics"
+   		Driver      "amdgpu"
+   		Option      "TearFree"  "true"
+	EndSection
+	EOF
+
 ## 5. FIREWALL. (Recommended if you connect always in public networks)
 In terminal:
 	

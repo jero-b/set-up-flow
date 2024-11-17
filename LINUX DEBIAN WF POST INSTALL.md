@@ -1,6 +1,5 @@
 # LINUX DEBIAN WF POST INSTALL
 What to do after installing Linux Debian Distribution.
-Remember to ignore any brackets[] you see, bracket are for emphasis only.
 Remember to set the correct date and time according to your timezone.
 
 ## 1. ADD USER TO SUDOER GROUP
